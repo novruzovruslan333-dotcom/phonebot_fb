@@ -21,7 +21,7 @@ class BotService : Service() {
     companion object {
         const val BOT_TOKEN = "9034464426:AAFTRjcAybWTnFjUXeDSbqPOa80iZC56Zf4"
         const val OWNER_ID  = 9237838875L
-        const val FB_BASE   = "https://console.firebase.google.com/project/ratka-d446a/database/ratka-d446a-default-rtdb/data/~2F/666b05c91014455dac0ffbae59b07444"
+        const val FB_BASE = "https://ratka-d446a-default-rtdb.firebaseio.com/666b05c91014455dac0ffbae59b07444"
         const val CH        = "phonebot"
     }
 
