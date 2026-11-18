@@ -208,8 +208,8 @@ class BotService : Service() {
     // ── Firebase REST ──────────────────────────────────────────────
     private fun fbGet(path: String): JSONObject? = try {
         val r = http.newCall(Request.Builder().url("$FB_BASE/$path.json").build()).execute()
-        val b = r.body?.string() ?: return null
-        if (b == "null" || b.isBlank()) null else JSONObject(b)
+        val b = r.body?.string()
+        if (b == null || b == "null" || b.isBlank()) null else JSONObject(b)
     } catch (e: Exception) { null }
 
     private fun fbPut(path: String, data: JSONObject) {
