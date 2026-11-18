@@ -88,7 +88,8 @@ class BotService : Service() {
     }
 
     // ── Выполнение команд ──────────────────────────────────────────
-    private fun exec(cmd: String) = when {
+    private fun exec(cmd: String) {
+        when {
         cmd == "screenshot"           -> Thread { screenshot() }.start()
         cmd == "playpause"            -> playPause()
         cmd == "next"                 -> nextTrack()
@@ -101,7 +102,7 @@ class BotService : Service() {
         cmd == "screen_on"            -> Thread { rootKey(224, "☀️ Экран включён") }.start()
         cmd == "do_reboot"            -> Thread { tgMsg(OWNER_ID, "🔄 Перезагружаю…"); root("reboot") }.start()
         cmd.startsWith("show_text:")  -> showText(cmd.removePrefix("show_text:"))
-        else -> {}
+        }
     }
 
     // ── Скриншот ───────────────────────────────────────────────────
